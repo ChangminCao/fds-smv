@@ -227,7 +227,9 @@ SPRINKLER_INSERT_LOOP: DO KS=1,N_DEVC
 
    N_INSERT = NINT(REAL(PY%PARTICLES_PER_SECOND,EB)*(T-DV%T))
 
-   IF (N_INSERT<1) CYCLE SPRINKLER_INSERT_LOOP
+   !Increase particles insert number to get droplets size distributions specified in the input file.
+   
+   IF (N_INSERT<7) CYCLE SPRINKLER_INSERT_LOOP
 
    ! Determine sprinkler/nozzle flow rate
 
